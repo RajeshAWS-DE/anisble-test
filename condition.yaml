@@ -1,0 +1,23 @@
+- name: Working on condition
+  hosts:
+    - agent
+  vars:
+    n: 11
+    name: Rajesh
+  tasks:
+    - name: checking when condition
+      debug:
+        msg: "given number  is odd"
+      when: n%2 != 0
+    - name: checing when condition
+      debug:
+        msg: "given number is even"
+      when: n%2==0
+    - name: checking loops
+      debug:
+        msg: "{{ item }}"
+      loop:
+        - Rajesh
+        - is 
+        - good
+        - boy

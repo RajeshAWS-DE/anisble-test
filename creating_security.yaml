@@ -1,0 +1,17 @@
+- name: Creating security groups
+  hosts:
+  vars:
+    micro_service_list: [mysql,mongodb,common]
+  tasks:
+    - name: "creating security group"
+      amazon.aws.ec2_security_group:
+        name: "roboshop-{{ item }}"
+        description: sg with rule descriptions
+        rules:
+          - proto: tcp
+            ports:
+              - 22
+            cidr_ip: 122.176.248.45
+            rule_desc: allow developer server to all security groups
+      loop:
+        "{{ micro_service_list }}"

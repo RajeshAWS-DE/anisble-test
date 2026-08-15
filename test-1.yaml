@@ -1,0 +1,10 @@
+- name: "Ansible first practice"
+  hosts: localhost
+  connection: local
+  vars: 
+    "COURSE": "ANSIBLE"
+    "TRAINER": "RAJESH"
+  tasks:
+    - name: "Printing the text"
+      debug:
+        msg: "I have started {{ COURSE }} course with trainer {{ TRAINER }}"
