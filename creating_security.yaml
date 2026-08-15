@@ -1,5 +1,6 @@
 - name: Creating security groups
-  hosts:
+  hosts: localhost
+  connection: local
   vars:
     micro_service_list: [mysql,mongodb,common]
   tasks:
