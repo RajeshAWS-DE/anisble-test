@@ -12,7 +12,7 @@
           - proto: tcp
             ports:
               - 22
-            cidr_ip: 122.176.248.45
+            cidr_ip: 122.176.248.45/32
             rule_desc: allow developer server to all security groups
       loop:
         "{{ micro_service_list }}"
